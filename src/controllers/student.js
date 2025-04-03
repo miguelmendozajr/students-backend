@@ -17,7 +17,7 @@ class StudentController {
             } else {
                 status = "Expulsado";
             }
-            response.push({"matrícula": student.id, "nombre": student.name, "estatus": status});
+            response.push({"matricula": student.id, "nombre": student.name, "estatus": status});
         }
         return response;
     }

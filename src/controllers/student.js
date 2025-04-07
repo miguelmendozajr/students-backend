@@ -8,11 +8,11 @@ class StudentController {
         const students = await this.service.getAllStudents();
         for (const student of students) {
             let status = "";
-            if (!student.debt && student.grade >= 7) {
+            if (student.debt == 0  && student.grade >= 7) {
                 status = "Aprobado";
-            } else if (!student.debt && student.grade < 7){
+            } else if (student.debt == 0 && student.grade < 7){
                 status = "Pendiente";
-            } else if (student.debt && student.grade >= 7){
+            } else if (student.debt > 0 && student.grade >= 7){
                 status = "Reestructura";
             } else {
                 status = "Expulsado";
